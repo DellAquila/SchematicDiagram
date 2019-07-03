@@ -1,0 +1,8 @@
+{
+  "name": "SchematicDiagram",
+  "version": "0.0.1",
+  "title": "SchematicDiagram",
+  "author": "DellAquila",
+  "description": "Play Factorio with a new skin, Schematic Diagram Style. Has extremely reduced quality graphics for better performance in low end computers.",
+  "factorio_version": "0.17"
+}
