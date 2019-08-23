@@ -492,7 +492,6 @@ data.raw["mining-drill"]["electric-mining-drill"].animations =    {
 
 
 --- BURNER  MINING DRILL
-
 data.raw["mining-drill"]["burner-mining-drill"].icon = "__SchematicDiagram__/graphics/icons/burner-mining-drill.png"
 data.raw["mining-drill"]["burner-mining-drill"].icon_size = 20
 data.raw["item"]["burner-mining-drill"].icon = "__SchematicDiagram__/graphics/icons/burner-mining-drill.png"
@@ -519,9 +518,263 @@ data.raw["mining-drill"]["burner-mining-drill"].animations =
 
 	
 
+-- TRAIN
+data.raw["locomotive"]["locomotive"].icon = "__SchematicDiagram__/graphics/icons/locomotive.png"
+data.raw["locomotive"]["locomotive"].icon_size = 20
+data.raw["item-with-entity-data"]["locomotive"].icon = "__SchematicDiagram__/graphics/icons/locomotive.png"
+data.raw["item-with-entity-data"]["locomotive"].icon_size = 20
+data.raw["locomotive"]["locomotive"].corpse = nil
+data.raw["locomotive"]["locomotive"].dying_explosion = nil
+data.raw["locomotive"]["locomotive"].burner.smoke = nil
+data.raw["locomotive"]["locomotive"].vehicle_impact_sound = nil
+data.raw["locomotive"]["locomotive"].working_sound = nil
+data.raw["locomotive"]["locomotive"].open_sound = nil
+data.raw["locomotive"]["locomotive"].close_sound = nil
+-- data.raw["locomotive"]["locomotive"].selection_box = {{-0.6, -2.6}, {0.6, 2.6}}
+data.raw["locomotive"]["locomotive"].pictures =
+    {
+      layers =
+      {
+        {
+          priority = "high",
+          flags = { "mask" },
+          slice = 1,
+          width = 253,
+          height = 212,
+          direction_count = 8,
+          allow_low_quality_rotation = true,
+          filenames =
+          {
+                "__SchematicDiagram__/graphics/entity/diesel-locomotive-01.png",
+                "__SchematicDiagram__/graphics/entity/diesel-locomotive-02.png",
+				"__SchematicDiagram__/graphics/entity/diesel-locomotive-03.png",
+				"__SchematicDiagram__/graphics/entity/diesel-locomotive-04.png",
+				"__SchematicDiagram__/graphics/entity/diesel-locomotive-05.png",
+				"__SchematicDiagram__/graphics/entity/diesel-locomotive-06.png",
+				"__SchematicDiagram__/graphics/entity/diesel-locomotive-07.png",
+				"__SchematicDiagram__/graphics/entity/diesel-locomotive-08.png",
+                
+          },
+          line_length = 1,
+          lines_per_file = 1,
+          shift = {0, 0.3},
+          apply_runtime_tint = true,
+        },
+      }
+    }
+data.raw["locomotive"]["locomotive"].wheels = {
+  priority = "very-low",
+  width = 1,
+  height = 1,
+  direction_count = 1,
+  filenames =
+  {
+    "__base__/graphics/entity/diesel-locomotive/train-wheels-01.png",
+    "__base__/graphics/entity/diesel-locomotive/train-wheels-02.png"
+  },
+  line_length = 1,
+  lines_per_file = 1,
+}
+
+data.raw["locomotive"]["locomotive"].stop_trigger = nil
+data.raw["locomotive"]["locomotive"].drive_over_tie_trigger = nil
+data.raw["locomotive"]["locomotive"].mined_sound = nil
 
 
+-- CARGO WAGON
+data.raw["cargo-wagon"]["cargo-wagon"].icon = "__SchematicDiagram__/graphics/icons/cargo-wagon.png"
+data.raw["cargo-wagon"]["cargo-wagon"].icon_size = 20
+data.raw["item-with-entity-data"]["cargo-wagon"].icon = "__SchematicDiagram__/graphics/icons/cargo-wagon.png"
+data.raw["item-with-entity-data"]["cargo-wagon"].icon_size = 20
+data.raw["cargo-wagon"]["cargo-wagon"].mined_sound = nil
+data.raw["cargo-wagon"]["cargo-wagon"].corpse = nil
+data.raw["cargo-wagon"]["cargo-wagon"].dying_explosion = nil
+data.raw["cargo-wagon"]["cargo-wagon"].working_sound = nil
+data.raw["cargo-wagon"]["cargo-wagon"].open_sound = nil
+data.raw["cargo-wagon"]["cargo-wagon"].close_sound = nil
+data.raw["cargo-wagon"]["cargo-wagon"].vehicle_impact_sound = nil
+-- data.raw["cargo-wagon"]["cargo-wagon"].selection_box = {{-0.6, -2.6}, {0.6, 2.6}}
+data.raw["cargo-wagon"]["cargo-wagon"].horizontal_doors = nil
+data.raw["cargo-wagon"]["cargo-wagon"].vertical_doors = nil
+data.raw["cargo-wagon"]["cargo-wagon"].pictures =
+    {
+      layers =
+      {
+        {
+          priority = "high",
+          flags = { "mask" },
+          slice = 1,
+          width = 253,
+          height = 212,
+          direction_count = 8,
+          allow_low_quality_rotation = true,
+          filenames =
+          {
+                "__SchematicDiagram__/graphics/entity/cargo-locomotive-01.png",
+                "__SchematicDiagram__/graphics/entity/cargo-locomotive-02.png",
+				"__SchematicDiagram__/graphics/entity/cargo-locomotive-03.png",
+				"__SchematicDiagram__/graphics/entity/cargo-locomotive-04.png",
+				"__SchematicDiagram__/graphics/entity/cargo-locomotive-05.png",
+				"__SchematicDiagram__/graphics/entity/cargo-locomotive-06.png",
+				"__SchematicDiagram__/graphics/entity/cargo-locomotive-07.png",
+				"__SchematicDiagram__/graphics/entity/cargo-locomotive-08.png",
+                
+          },
+          line_length = 1,
+          lines_per_file = 1,
+          shift = {0, 0.3},
+          apply_runtime_tint = true,
+        },
+      }
+    }
+data.raw["cargo-wagon"]["cargo-wagon"].wheels = {
+  priority = "very-low",
+  width = 1,
+  height = 1,
+  direction_count = 1,
+  filenames =
+  {
+    "__base__/graphics/entity/diesel-locomotive/train-wheels-01.png",
+    "__base__/graphics/entity/diesel-locomotive/train-wheels-02.png"
+  },
+  line_length = 1,
+  lines_per_file = 1,
+}
+data.raw["cargo-wagon"]["cargo-wagon"].crash_trigger = nil
 
+-- FLUID WAGON
+data.raw["fluid-wagon"]["fluid-wagon"].icon = "__SchematicDiagram__/graphics/icons/fluid-wagon.png"
+data.raw["fluid-wagon"]["fluid-wagon"].icon_size = 20
+data.raw["item-with-entity-data"]["fluid-wagon"].icon = "__SchematicDiagram__/graphics/icons/fluid-wagon.png"
+data.raw["item-with-entity-data"]["fluid-wagon"].icon_size = 20
+data.raw["fluid-wagon"]["fluid-wagon"].mined_sound = nil
+data.raw["fluid-wagon"]["fluid-wagon"].corpse = nil
+data.raw["fluid-wagon"]["fluid-wagon"].dying_explosion = nil
+data.raw["fluid-wagon"]["fluid-wagon"].working_sound = nil
+data.raw["fluid-wagon"]["fluid-wagon"].open_sound = nil
+data.raw["fluid-wagon"]["fluid-wagon"].close_sound = nil
+data.raw["fluid-wagon"]["fluid-wagon"].vehicle_impact_sound = nil
+-- data.raw["fluid-wagon"]["fluid-wagon"].selection_box = {{-0.6, -2.6}, {0.6, 2.6}}
+data.raw["fluid-wagon"]["fluid-wagon"].horizontal_doors = nil
+data.raw["fluid-wagon"]["fluid-wagon"].vertical_doors = nil
+data.raw["fluid-wagon"]["fluid-wagon"].pictures =
+    {
+      layers =
+      {
+        {
+          priority = "high",
+          flags = { "mask" },
+          slice = 1,
+          width = 253,
+          height = 212,
+          direction_count = 8,
+          allow_low_quality_rotation = true,
+          filenames =
+          {
+                "__SchematicDiagram__/graphics/entity/fluid-locomotive-01.png",
+                "__SchematicDiagram__/graphics/entity/fluid-locomotive-02.png",
+				"__SchematicDiagram__/graphics/entity/fluid-locomotive-03.png",
+				"__SchematicDiagram__/graphics/entity/fluid-locomotive-04.png",
+				"__SchematicDiagram__/graphics/entity/fluid-locomotive-05.png",
+				"__SchematicDiagram__/graphics/entity/fluid-locomotive-06.png",
+				"__SchematicDiagram__/graphics/entity/fluid-locomotive-07.png",
+				"__SchematicDiagram__/graphics/entity/fluid-locomotive-08.png",
+                
+          },
+          line_length = 1,
+          lines_per_file = 1,
+          shift = {0, 0.3},
+          apply_runtime_tint = true,
+        },
+      }
+    }
+data.raw["fluid-wagon"]["fluid-wagon"].wheels = {
+  priority = "very-low",
+  width = 1,
+  height = 1,
+  direction_count = 1,
+  filenames =
+  {
+    "__base__/graphics/entity/diesel-locomotive/train-wheels-01.png",
+    "__base__/graphics/entity/diesel-locomotive/train-wheels-02.png"
+  },
+  line_length = 1,
+  lines_per_file = 1,
+}
+data.raw["fluid-wagon"]["fluid-wagon"].crash_trigger = nil
+
+
+-- RAIL 
+
+
+rail_pictures = function()
+  return rail_pictures_internal({
+                                 {"metals", "metals", mipmap = true},
+                                 {"backplates", "backplates", mipmap = true},
+                                 {"ties", "ties", variations = 3},
+                                 {"stone_path", "stone-path", variations = 3},
+                                })
+end
+
+rail_pictures_internal = function(elems)
+  local keys =
+  {
+    {"straight_rail", "horizontal", 64, 128, 0, 0, true},
+    {"straight_rail", "vertical", 128, 64, 0, 0, true},
+    {"straight_rail", "diagonal-left-top", 96, 96, 0.5, 0.5, true},
+    {"straight_rail", "diagonal-right-top", 96, 96, -0.5, 0.5, true},
+    {"straight_rail", "diagonal-right-bottom", 96, 96, -0.5, -0.5, true},
+    {"straight_rail", "diagonal-left-bottom", 96, 96, 0.5, -0.5, true},
+    {"curved_rail", "vertical-left-top", 192, 288, 0.5, 0.5},
+    {"curved_rail", "vertical-right-top", 192, 288, -0.5, 0.5},
+    {"curved_rail", "vertical-right-bottom", 192, 288, -0.5, -0.5},
+    {"curved_rail", "vertical-left-bottom", 192, 288, 0.5, -0.5},
+    {"curved_rail" ,"horizontal-left-top", 288, 192, 0.5, 0.5},
+    {"curved_rail" ,"horizontal-right-top", 288, 192, -0.5, 0.5},
+    {"curved_rail" ,"horizontal-right-bottom", 288, 192, -0.5, -0.5},
+    {"curved_rail" ,"horizontal-left-bottom", 288, 192, 0.5, -0.5}
+  }
+  local res = {}
+  for _ , key in ipairs(keys) do
+    local part = {}
+    dashkey = key[1]:gsub("_", "-")
+    for _ , elem in ipairs(elems) do
+      part[elem[1]] =
+      {
+        filename = string.format("__SchematicDiagram__/graphics/entity/%s/%s-%s-%s.png", dashkey, dashkey, key[2], elem[2]),
+        priority = elem.priority or "extra-high",
+        flags = elem.mipmap and { "trilinear-filtering" } or { "low-object" },
+        width = key[3],
+        height = key[4],
+        shift = {key[5], key[6]},
+        variation_count = (key[7] and elem.variations) or 1,
+      }
+    end
+    dashkey2 = key[2]:gsub("-", "_")
+    res[key[1] .. "_" .. dashkey2] = part
+  end
+    res["rail_endings"] =
+    {
+       sheets =
+       {
+         {
+           filename = "__base__/graphics/entity/rail-endings/rail-endings-background.png",
+           priority = "high",
+           flags = { "low-object" },
+           width = 1,
+           height = 1,
+           
+         },
+         
+       }
+    }
+  return res
+end
+
+data.raw["curved-rail"]["curved-rail"].corpse = nil
+data.raw["curved-rail"]["curved-rail"].pictures = rail_pictures()
+data.raw["straight-rail"]["straight-rail"].corpse = nil
+data.raw["straight-rail"]["straight-rail"].pictures = rail_pictures()
 
 
 
