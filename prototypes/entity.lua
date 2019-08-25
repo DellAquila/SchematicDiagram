@@ -412,7 +412,8 @@ data.raw["electric-pole"]["substation"].pictures =
           priority = "extra-high",
           width = 24,
           height = 24,
-          direction_count = 1,          
+          direction_count = 1,   
+	      scale = 2		  
         }
       }
     }
@@ -705,6 +706,15 @@ data.raw["fluid-wagon"]["fluid-wagon"].crash_trigger = nil
 
 
 -- RAIL 
+data.raw["curved-rail"]["curved-rail"].icon = "__SchematicDiagram__/graphics/icons/rail.png"
+data.raw["curved-rail"]["curved-rail"].icon_size = 20
+data.raw["rail-planner"]["rail"].icon = "__SchematicDiagram__/graphics/icons/rail.png"
+data.raw["rail-planner"]["rail"].icon_size = 20
+data.raw["straight-rail"]["straight-rail"].icon = "__SchematicDiagram__/graphics/icons/rail.png"
+data.raw["straight-rail"]["straight-rail"].icon_size = 20
+
+
+
 
 
 rail_pictures = function()
@@ -775,6 +785,430 @@ data.raw["curved-rail"]["curved-rail"].corpse = nil
 data.raw["curved-rail"]["curved-rail"].pictures = rail_pictures()
 data.raw["straight-rail"]["straight-rail"].corpse = nil
 data.raw["straight-rail"]["straight-rail"].pictures = rail_pictures()
+
+-- signals
+
+
+data.raw["rail-signal"]["rail-signal"].icon = "__SchematicDiagram__/graphics/icons/rail-signal.png"
+data.raw["rail-signal"]["rail-signal"].icon_size = 20
+data.raw["item"]["rail-signal"].icon = "__SchematicDiagram__/graphics/icons/rail-signal.png"
+data.raw["item"]["rail-signal"].icon_size = 20
+data.raw["rail-signal"]["rail-signal"].corpse = nil
+data.raw["rail-signal"]["rail-signal"].animation =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/rail-signal.png",
+      priority = "high",
+      width = 96,
+      height = 96,
+      frame_count = 3,
+      direction_count = 8,
+    }
+data.raw["rail-signal"]["rail-signal"].rail_piece = nil
+
+
+
+
+
+data.raw["rail-chain-signal"]["rail-chain-signal"].icon = "__SchematicDiagram__/graphics/icons/rail-chain-signal.png"
+data.raw["rail-chain-signal"]["rail-chain-signal"].icon_size = 20
+data.raw["item"]["rail-chain-signal"].icon = "__SchematicDiagram__/graphics/icons/rail-chain-signal.png"
+data.raw["item"]["rail-chain-signal"].icon_size = 20
+data.raw["rail-chain-signal"]["rail-chain-signal"].corpse = nil
+data.raw["rail-chain-signal"]["rail-chain-signal"].animation =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/rail-chain-signal.png",
+      priority = "high",
+      line_length = 5,
+      width = 160,
+      height = 160,
+      frame_count = 5,
+      axially_symmetrical = false,
+      direction_count = 8,
+    }
+data.raw["rail-chain-signal"]["rail-chain-signal"].rail_piece = nil
+
+
+
+
+data.raw["train-stop"]["train-stop"].icon = "__SchematicDiagram__/graphics/icons/train-stop.png"
+data.raw["train-stop"]["train-stop"].icon_size = 20
+data.raw["item"]["train-stop"].icon = "__SchematicDiagram__/graphics/icons/train-stop.png"
+data.raw["item"]["train-stop"].icon_size = 20
+data.raw["train-stop"]["train-stop"].corpse = nil
+data.raw["train-stop"]["train-stop"].rail_overlay_animations = nil 
+data.raw["train-stop"]["train-stop"].animations = make_4way_animation_from_spritesheet({ layers =
+    {
+      {
+        filename = "__SchematicDiagram__/graphics/entity/train-stop-bottom.png",
+        line_length = 4,
+        width = 71,
+        height = 146,
+        direction_count = 4,
+		apply_runtime_tint = true,
+        shift = util.by_pixel(-0.5, -27),
+      }      
+    }})
+data.raw["train-stop"]["train-stop"].top_animations = nil
+data.raw["train-stop"]["train-stop"].light1 = nil
+data.raw["train-stop"]["train-stop"].light2 = nil
+data.raw["train-stop"]["train-stop"].vehicle_impact_sound = nil
+data.raw["train-stop"]["train-stop"].working_sound = nil
+
+
+
+
+--- solar panel and accumulator
+
+data.raw["solar-panel"]["solar-panel"].icon = "__SchematicDiagram__/graphics/icons/solar-panel.png"
+data.raw["solar-panel"]["solar-panel"].icon_size = 20
+data.raw["item"]["solar-panel"].icon = "__SchematicDiagram__/graphics/icons/solar-panel.png"
+data.raw["item"]["solar-panel"].icon_size = 20
+data.raw["solar-panel"]["solar-panel"].corpse = nil
+data.raw["solar-panel"]["solar-panel"].picture =
+    {
+      layers =
+      {
+        {
+          filename = "__SchematicDiagram__/graphics/entity/solar-panel.png",
+          priority = "high",
+          width = 100,
+          height = 100,
+         -- shift = util.by_pixel(-3, 3),
+		 scale = 0.9,
+        },
+      }
+    }
+data.raw["solar-panel"]["solar-panel"].overlay = nil
+data.raw["solar-panel"]["solar-panel"].vehicle_impact_sound = nil
+
+
+
+data.raw["accumulator"]["accumulator"].icon = "__SchematicDiagram__/graphics/icons/accumulator.png"
+data.raw["accumulator"]["accumulator"].icon_size = 20
+data.raw["item"]["accumulator"].icon = "__SchematicDiagram__/graphics/icons/accumulator.png"
+data.raw["item"]["accumulator"].icon_size = 20
+
+data.raw["accumulator"]["accumulator"].corpse = nil
+data.raw["accumulator"]["accumulator"].picture =
+    {
+      layers =
+      {
+        {
+          filename = "__SchematicDiagram__/graphics/entity/accumulator.png",
+          priority = "high",
+          width = 100,
+          height = 100,
+         -- shift = util.by_pixel(-3, 3),
+		 scale = 0.5
+        },
+      }
+    }
+data.raw["accumulator"]["accumulator"].charge_animation = nil
+data.raw["accumulator"]["accumulator"].charge_light = nil
+data.raw["accumulator"]["accumulator"].discharge_animation = nil
+data.raw["accumulator"]["accumulator"].discharge_light = nil
+data.raw["accumulator"]["accumulator"].vehicle_impact_sound = nil
+data.raw["accumulator"]["accumulator"].working_sound = nil
+
+
+
+--- ROBOTS
+
+
+-- logistic
+
+data.raw["logistic-robot"]["logistic-robot"].icon = "__SchematicDiagram__/graphics/icons/logistic-robot.png"
+data.raw["logistic-robot"]["logistic-robot"].icon_size = 20
+data.raw["item"]["logistic-robot"].icon = "__SchematicDiagram__/graphics/icons/logistic-robot.png"
+data.raw["item"]["logistic-robot"].icon_size = 20
+data.raw["logistic-robot"]["logistic-robot"].working_sound = nil
+data.raw["logistic-robot"]["logistic-robot"].cargo_centered = {0.0, 0.0}
+data.raw["logistic-robot"]["logistic-robot"].idle =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 42,
+    }
+data.raw["logistic-robot"]["logistic-robot"].idle_with_cargo =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 42,
+    }
+    data.raw["logistic-robot"]["logistic-robot"].in_motion =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 42,
+    }
+    data.raw["logistic-robot"]["logistic-robot"].in_motion_with_cargo =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 41,
+      height = 42,
+      frame_count = 1,
+      shift = {0.015625, -0.09375},
+      direction_count = 16,
+      y = 42,
+    }
+    data.raw["logistic-robot"]["logistic-robot"].shadow_idle =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      y = 23,
+      
+    }
+    data.raw["logistic-robot"]["logistic-robot"].shadow_idle_with_cargo =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      
+    }
+    data.raw["logistic-robot"]["logistic-robot"].shadow_in_motion =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+      y = 23,
+      
+    }
+    data.raw["logistic-robot"]["logistic-robot"].shadow_in_motion_with_cargo =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/logistic-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {0.96875, 0.609375},
+      direction_count = 16,
+     
+    }
+
+
+
+-- construction
+
+data.raw["construction-robot"]["construction-robot"].icon = "__SchematicDiagram__/graphics/icons/construction-robot.png"
+data.raw["construction-robot"]["construction-robot"].icon_size = 20
+data.raw["item"]["construction-robot"].icon = "__SchematicDiagram__/graphics/icons/construction-robot.png"
+data.raw["item"]["construction-robot"].icon_size = 20
+data.raw["construction-robot"]["construction-robot"].working_light = nil
+data.raw["construction-robot"]["construction-robot"].sparks = {
+      {
+        filename = "__base__/graphics/entity/sparks/sparks-01.png",
+        width = 1,
+        height = 1,
+        frame_count = 19,
+        line_length = 19,
+        shift = {-0.109375, 0.3125},
+        tint = { r = 1.0, g = 0.9, b = 0.0, a = 1.0 },
+        animation_speed = 0.3
+      }}
+data.raw["construction-robot"]["construction-robot"].working_sound = nil
+data.raw["construction-robot"]["construction-robot"].cargo_centered = {0, 0}
+data.raw["construction-robot"]["construction-robot"].construction_vector = {0, 0}
+data.raw["construction-robot"]["construction-robot"].idle =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+      direction_count = 16,
+      
+    }
+    data.raw["construction-robot"]["construction-robot"].in_motion =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+      direction_count = 16,
+      
+    }
+    data.raw["construction-robot"]["construction-robot"].shadow_idle =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16,
+      
+    }
+    data.raw["construction-robot"]["construction-robot"].shadow_in_motion =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16,
+      
+    }
+    data.raw["construction-robot"]["construction-robot"].working =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 32,
+      height = 36,
+      frame_count = 1,
+      shift = {0, -0.15625},
+      direction_count = 16,
+      
+    }
+    data.raw["construction-robot"]["construction-robot"].shadow_working =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/construction-robot.png",
+      priority = "high",
+      line_length = 16,
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {1.09375, 0.59375},
+      direction_count = 16,
+      
+    }
+    data.raw["construction-robot"]["construction-robot"].smoke =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/construction-robot.png",
+      width = 1,
+      height = 1,
+      frame_count = 19,
+      line_length = 19,
+      shift = {0.078125, -0.15625},
+      animation_speed = 0.3
+    }
+
+-- roboport
+
+data.raw["roboport"]["roboport"].icon = "__SchematicDiagram__/graphics/icons/roboport.png"
+data.raw["roboport"]["roboport"].icon_size = 20
+data.raw["item"]["roboport"].icon = "__SchematicDiagram__/graphics/icons/roboport.png"
+data.raw["item"]["roboport"].icon_size = 20
+data.raw["roboport"]["roboport"].corpse = nil
+data.raw["roboport"]["roboport"].dying_explosion = nil
+data.raw["roboport"]["roboport"].vehicle_impact_sound = nil
+data.raw["roboport"]["roboport"].working_sound = nil
+data.raw["roboport"]["roboport"].recharging_light = nil
+data.raw["roboport"]["roboport"].open_door_trigger_effect = nil
+data.raw["roboport"]["roboport"].close_door_trigger_effect = nil
+data.raw["roboport"]["roboport"].base =
+    {
+      layers =
+      {
+        {
+          filename = "__SchematicDiagram__/graphics/entity/roboport-base.png",
+          width = 143,
+          height = 135,
+         --shift = {0.5, 0.25}
+        }
+       
+      }
+    }
+data.raw["roboport"]["roboport"].base_patch =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/roboport.png",
+      priority = "medium",
+      width = 1,
+      height = 1,
+      frame_count = 1,
+      shift = {0.03125, 0.203125},
+      
+    }
+data.raw["roboport"]["roboport"].base_animation =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/roboport.png",
+      priority = "medium",
+      width = 1,
+      height = 1,
+      frame_count = 8,
+      animation_speed = 0.5,
+      shift = {-0.5315, -1.9375},
+      
+    }
+data.raw["roboport"]["roboport"].door_animation_up =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/roboport.png",
+      priority = "medium",
+      width = 1,
+      height = 1,
+      frame_count = 16,
+      shift = {0.015625, -0.890625},
+      
+    }
+data.raw["roboport"]["roboport"].door_animation_down =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/roboport.png",
+      priority = "medium",
+      width = 1,
+      height = 1,
+      frame_count = 16,
+      shift = {0.015625, -0.234375},
+      
+    }
+    data.raw["roboport"]["roboport"].recharging_animation =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/roboport.png",
+      priority = "high",
+      width = 1,
+      height = 1,
+      frame_count = 16,
+      scale = 1.5,
+      animation_speed = 0.5
+    }
+
+
+
+
 
 
 
