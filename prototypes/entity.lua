@@ -1206,10 +1206,540 @@ data.raw["roboport"]["roboport"].door_animation_down =
       animation_speed = 0.5
     }
 
+--- tree
+
+
+local function get_tree(name)
+  local items = data.raw["tree"]
+  if trees then
+    return trees[name]
+  end
+  return nil
+end
+
+local function modify_energy(name, tree)
+	  data.raw["tree"][tree.name].icon = "__SchematicDiagram__/graphics/icons/tree.png"
+	  data.raw["tree"][tree.name].icon_size = 40
+	  data.raw["tree"][tree.name].vehicle_impact_sound = nil
+	  data.raw["tree"][tree.name].pictures =
+      {{
+        filename = "__SchematicDiagram__/graphics/icons/tree.png",
+        width = 40,
+        height = 40,      
+      }}
+	  data.raw["tree"][tree.name].variations = nil
+	  data.raw["tree"][tree.name].variation_weights = nil
+   end
+
+   local function get_zero(name, tree)
+  local existing_item = get_tree(name)
+  return modify_energy(name, tree) 
+end
+
+
+local function process_tree(tree)
+  for name,tree in pairs(tree) do
+  local tree_item = get_zero(tree_name, tree)
+end 
+end
+process_tree(data.raw["tree"])
+
+--- beacon
+
+data.raw["beacon"]["beacon"].icon = "__SchematicDiagram__/graphics/icons/beacon.png"
+data.raw["beacon"]["beacon"].icon_size = 20
+data.raw["item"]["beacon"].icon = "__SchematicDiagram__/graphics/icons/beacon.png"
+data.raw["item"]["beacon"].icon_size = 20
+data.raw["beacon"]["beacon"].corpse = nil
+data.raw["beacon"]["beacon"].dying_explosion = nil
+data.raw["beacon"]["beacon"].base_picture =
+    {
+      filename = "__SchematicDiagram__/graphics/entity/beacon.png",
+      width = 100,
+      height = 100,
+    --  shift = { 0.34375, 0.046875}
+    }
+data.raw["beacon"]["beacon"].animation =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/beacon.png",
+      width = 1,
+      height = 1,
+      line_length = 8,
+      frame_count = 32,
+      shift = { -0.03125, -1.71875},
+      animation_speed = 0.5
+    }
+data.raw["beacon"]["beacon"].animation_shadow =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/beacon.png",
+      width = 1,
+      height = 1,
+      line_length = 8,
+      frame_count = 32,
+      shift = { 3.140625, 0.484375},
+      animation_speed = 0.5
+    }    
+data.raw["beacon"]["beacon"].vehicle_impact_sound = nil
+    
+--- modules
+data.raw["module"]["productivity-module"].icon = "__SchematicDiagram__/graphics/icons/prod-1.png"
+data.raw["module"]["productivity-module"].icon_size = 20
+data.raw["module"]["productivity-module-2"].icon = "__SchematicDiagram__/graphics/icons/prod-2.png"
+data.raw["module"]["productivity-module-2"].icon_size = 20
+data.raw["module"]["productivity-module-3"].icon = "__SchematicDiagram__/graphics/icons/prod-3.png"
+data.raw["module"]["productivity-module-3"].icon_size = 20
+data.raw["module"]["speed-module"].icon = "__SchematicDiagram__/graphics/icons/speed-1.png"
+data.raw["module"]["speed-module"].icon_size = 20
+data.raw["module"]["speed-module-2"].icon = "__SchematicDiagram__/graphics/icons/speed-2.png"
+data.raw["module"]["speed-module-2"].icon_size = 20
+data.raw["module"]["speed-module-3"].icon = "__SchematicDiagram__/graphics/icons/speed-3.png"
+data.raw["module"]["speed-module-3"].icon_size = 20
+data.raw["module"]["effectivity-module"].icon = "__SchematicDiagram__/graphics/icons/ef-1.png"
+data.raw["module"]["effectivity-module"].icon_size = 20
+data.raw["module"]["effectivity-module-2"].icon = "__SchematicDiagram__/graphics/icons/ef-2.png"
+data.raw["module"]["effectivity-module-2"].icon_size = 20
+data.raw["module"]["effectivity-module-3"].icon = "__SchematicDiagram__/graphics/icons/ef-3.png"
+data.raw["module"]["effectivity-module-3"].icon_size = 20
+
+-- chests
+
+data.raw["container"]["steel-chest"].icon = "__SchematicDiagram__/graphics/icons/steel-chest.png"
+data.raw["container"]["steel-chest"].icon_size = 20
+data.raw["item"]["steel-chest"].icon = "__SchematicDiagram__/graphics/icons/steel-chest.png"
+data.raw["item"]["steel-chest"].icon_size = 20
+data.raw["container"]["steel-chest"].corpse = nil
+data.raw["container"]["steel-chest"].open_sound = nil
+data.raw["container"]["steel-chest"].close_sound = nil
+data.raw["container"]["steel-chest"].vehicle_impact_sound = nil
+data.raw["container"]["steel-chest"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/steel-chest.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+
+data.raw["container"]["iron-chest"].icon = "__SchematicDiagram__/graphics/icons/iron-chest.png"
+data.raw["container"]["iron-chest"].icon_size = 20
+data.raw["item"]["iron-chest"].icon = "__SchematicDiagram__/graphics/icons/iron-chest.png"
+data.raw["item"]["iron-chest"].icon_size = 20
+data.raw["container"]["iron-chest"].corpse = nil
+data.raw["container"]["iron-chest"].open_sound = nil
+data.raw["container"]["iron-chest"].close_sound = nil
+data.raw["container"]["iron-chest"].vehicle_impact_sound = nil
+data.raw["container"]["iron-chest"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/iron-chest.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+		
+data.raw["container"]["wooden-chest"].icon = "__SchematicDiagram__/graphics/icons/wood-chest.png"
+data.raw["container"]["wooden-chest"].icon_size = 20
+data.raw["item"]["wooden-chest"].icon = "__SchematicDiagram__/graphics/icons/wood-chest.png"
+data.raw["item"]["wooden-chest"].icon_size = 20
+data.raw["container"]["wooden-chest"].corpse = nil
+data.raw["container"]["wooden-chest"].open_sound = nil
+data.raw["container"]["wooden-chest"].close_sound = nil
+data.raw["container"]["wooden-chest"].vehicle_impact_sound = nil
+data.raw["container"]["wooden-chest"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/wood-chest.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
 
 
 
+		
+	
+
+data.raw["logistic-container"]["logistic-chest-active-provider"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-active-provider.png"
+data.raw["logistic-container"]["logistic-chest-active-provider"].icon_size = 20
+data.raw["item"]["logistic-chest-active-provider"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-active-provider.png"
+data.raw["item"]["logistic-chest-active-provider"].icon_size = 20
+data.raw["logistic-container"]["logistic-chest-active-provider"].corpse = nil
+data.raw["logistic-container"]["logistic-chest-active-provider"].open_sound = nil
+data.raw["logistic-container"]["logistic-chest-active-provider"].close_sound = nil
+data.raw["logistic-container"]["logistic-chest-active-provider"].vehicle_impact_sound = nil
+data.raw["logistic-container"]["logistic-chest-active-provider"].animation = nil
+data.raw["logistic-container"]["logistic-chest-active-provider"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/logistic-chest-active-provider.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+			
+
+data.raw["logistic-container"]["logistic-chest-passive-provider"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-passive-provider.png"
+data.raw["logistic-container"]["logistic-chest-passive-provider"].icon_size = 20
+data.raw["item"]["logistic-chest-passive-provider"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-passive-provider.png"
+data.raw["item"]["logistic-chest-passive-provider"].icon_size = 20
+data.raw["logistic-container"]["logistic-chest-passive-provider"].corpse = nil
+data.raw["logistic-container"]["logistic-chest-passive-provider"].open_sound = nil
+data.raw["logistic-container"]["logistic-chest-passive-provider"].close_sound = nil
+data.raw["logistic-container"]["logistic-chest-passive-provider"].vehicle_impact_sound = nil
+data.raw["logistic-container"]["logistic-chest-passive-provider"].animation = nil
+data.raw["logistic-container"]["logistic-chest-passive-provider"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/logistic-chest-passive-provider.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+			
+data.raw["logistic-container"]["logistic-chest-storage"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-storage.png"
+data.raw["logistic-container"]["logistic-chest-storage"].icon_size = 20
+data.raw["item"]["logistic-chest-storage"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-storage.png"
+data.raw["item"]["logistic-chest-storage"].icon_size = 20
+data.raw["logistic-container"]["logistic-chest-storage"].corpse = nil
+data.raw["logistic-container"]["logistic-chest-storage"].open_sound = nil
+data.raw["logistic-container"]["logistic-chest-storage"].close_sound = nil
+data.raw["logistic-container"]["logistic-chest-storage"].vehicle_impact_sound = nil
+data.raw["logistic-container"]["logistic-chest-storage"].animation = nil
+data.raw["logistic-container"]["logistic-chest-storage"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/logistic-chest-storage.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+			
+data.raw["logistic-container"]["logistic-chest-buffer"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-buffer.png"
+data.raw["logistic-container"]["logistic-chest-buffer"].icon_size = 20
+data.raw["item"]["logistic-chest-buffer"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-buffer.png"
+data.raw["item"]["logistic-chest-buffer"].icon_size = 20
+data.raw["logistic-container"]["logistic-chest-buffer"].corpse = nil
+data.raw["logistic-container"]["logistic-chest-buffer"].open_sound = nil
+data.raw["logistic-container"]["logistic-chest-buffer"].close_sound = nil
+data.raw["logistic-container"]["logistic-chest-buffer"].vehicle_impact_sound = nil
+data.raw["logistic-container"]["logistic-chest-buffer"].animation = nil
+data.raw["logistic-container"]["logistic-chest-buffer"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/logistic-chest-buffer.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+			
+data.raw["logistic-container"]["logistic-chest-requester"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-requester.png"
+data.raw["logistic-container"]["logistic-chest-requester"].icon_size = 20
+data.raw["item"]["logistic-chest-requester"].icon = "__SchematicDiagram__/graphics/icons/logistic-chest-requester.png"
+data.raw["item"]["logistic-chest-requester"].icon_size = 20
+data.raw["logistic-container"]["logistic-chest-requester"].corpse = nil
+data.raw["logistic-container"]["logistic-chest-requester"].open_sound = nil
+data.raw["logistic-container"]["logistic-chest-requester"].close_sound = nil
+data.raw["logistic-container"]["logistic-chest-requester"].vehicle_impact_sound = nil
+data.raw["logistic-container"]["logistic-chest-requester"].animation = nil
+data.raw["logistic-container"]["logistic-chest-requester"].picture =
+    {      layers =      {        {
+          filename = "__SchematicDiagram__/graphics/icons/logistic-chest-requester.png",
+          priority = "extra-high",
+          width = 20,
+          height = 20,
+		  scale = 2
+         -- shift = util.by_pixel(0, -0.5),
+        }}}
+
+		
+		
+--- WATER 
+
+-- "water", "deepwater", "water-green", "deepwater-green", "water-shallow", "water-mud"
+
+data.raw["tile"]["water"].variants =
+    {
+      main =
+      {
+        {
+          picture = "__SchematicDiagram__/graphics/entity/water.png",
+          count = 1,
+          size = 1,
+        }
+      },
+      inner_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      outer_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      side =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      u_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      o_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      }
+    }
+data.raw["tile"]["water"].transitions = nil
+data.raw["tile"]["water"].transitions_between_transitions = nil
+    	
 
 
 
+data.raw["tile"]["deepwater"].variants =
+    {
+      main =
+      {
+        {
+          picture = "__SchematicDiagram__/graphics/entity/water.png",
+          count = 1,
+          size = 1,
+        }
+      },
+      inner_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      outer_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      side =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      u_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      o_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      }
+    }
+data.raw["tile"]["deepwater"].transitions = nil
+data.raw["tile"]["deepwater"].transitions_between_transitions = nil
+    	
+					
+		
 
+
+data.raw["tile"]["water-green"].variants =
+    {
+      main =
+      {
+        {
+          picture = "__SchematicDiagram__/graphics/entity/water.png",
+          count = 1,
+          size = 1,
+        }
+      },
+      inner_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      outer_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      side =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      u_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      o_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      }
+    }
+data.raw["tile"]["water-green"].transitions = nil
+data.raw["tile"]["water-green"].transitions_between_transitions = nil
+    	
+					
+		
+
+
+data.raw["tile"]["deepwater-green"].variants =
+    {
+      main =
+      {
+        {
+          picture = "__SchematicDiagram__/graphics/entity/water.png",
+          count = 1,
+          size = 1,
+        }
+      },
+      inner_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      outer_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      side =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      u_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      o_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      }
+    }
+data.raw["tile"]["deepwater-green"].transitions = nil
+data.raw["tile"]["deepwater-green"].transitions_between_transitions = nil
+    	
+					
+		
+
+
+data.raw["tile"]["water-shallow"].variants =
+    {
+      main =
+      {
+        {
+          picture = "__SchematicDiagram__/graphics/entity/water.png",
+          count = 1,
+          size = 1,
+        }
+      },
+      inner_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      outer_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      side =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      u_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      o_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      }
+    }
+data.raw["tile"]["water-shallow"].transitions = nil
+data.raw["tile"]["water-shallow"].transitions_between_transitions = nil
+    	
+					
+		
+
+
+data.raw["tile"]["water-mud"].variants =
+    {
+      main =
+      {
+        {
+          picture = "__SchematicDiagram__/graphics/entity/water.png",
+          count = 1,
+          size = 1,
+        }
+      },
+      inner_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      outer_corner =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      side =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      u_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      },
+      o_transition =
+      {
+        picture = "__SchematicDiagram__/graphics/entity/water.png",
+        count = 1,
+      }
+    }
+data.raw["tile"]["water-mud"].transitions = nil
+data.raw["tile"]["water-mud"].transitions_between_transitions = nil
+    	
+					
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
