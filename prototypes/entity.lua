@@ -1729,12 +1729,46 @@ data.raw["tile"]["water-mud"].variants =
 data.raw["tile"]["water-mud"].transitions = nil
 data.raw["tile"]["water-mud"].transitions_between_transitions = nil
     	
-					
-				
-		
-		
-		
-		
+--- LAMP
+
+
+data.raw["lamp"]["small-lamp"].icon = "__SchematicDiagram__/graphics/icons/small-lamp.png"
+data.raw["lamp"]["small-lamp"].icon_size = 20
+data.raw["item"]["small-lamp"].icon = "__SchematicDiagram__/graphics/icons/small-lamp.png"
+data.raw["item"]["small-lamp"].icon_size = 20	
+data.raw["lamp"]["small-lamp"].corpse = nil
+data.raw["lamp"]["small-lamp"].vehicle_impact_sound = nil
+data.raw["lamp"]["small-lamp"].picture_off =
+    {
+      layers =
+      {
+        {
+          filename = "__SchematicDiagram__/graphics/entity/lamp.png",
+          priority = "high",
+          width = 42,
+          height = 36,
+          frame_count = 1,
+		  scale = 0.7,
+          axially_symmetrical = false,
+          direction_count = 1,
+          -- shift = util.by_pixel(0,3)
+        },
+        
+      }
+    }
+data.raw["lamp"]["small-lamp"].picture_on =
+    {
+      filename = "__SchematicDiagram__/graphics/icons/small-lamp.png",
+      priority = "high",
+      width = 20,
+      height = 20,
+      frame_count = 1,
+      axially_symmetrical = false,
+      direction_count = 1,
+      shift = util.by_pixel(0, -7),
+      
+    }
+    
 		
 		
 		
